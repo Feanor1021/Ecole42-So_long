@@ -1,11 +1,41 @@
 #include "so_long.h"
 
-
-
-void ft_error()
+void print_map(t_game so_long)
 {
-    ft_printf("Error\n");
-    exit(1);
+	int i;
+	int j;
+	i = 0;
+	j = 0;
+	while(i<so_long.map_sizes[1])
+    {
+		j = 0;
+        while( j < so_long.map_sizes[0])
+        {
+            ft_printf("%c",so_long.map[i][j]);
+			j++;
+        }
+        ft_printf("\n");
+		i++;
+    }
+}
+void print_map2(t_game so_long, t_flood **mapcpy)
+{
+	int i;
+	int j;
+	i = 0;
+	j = 0;
+	while(i<so_long.map_sizes[1])
+    {
+		j = 0;
+        while( j < so_long.map_sizes[0])
+        {
+            ft_printf("%d ",mapcpy[i][j].num);
+			j++;
+        }
+        ft_printf("\n");
+		i++;
+    }
+	ft_printf("\n\n");
 }
 
 size_t	ft_strlen2(const char *s)
